@@ -39,8 +39,6 @@ def sigmoid_grad(s):
     return s * (1 - s)
     ### END YOUR CODE
 
-    return ds
-
 
 def test_sigmoid_basic():
     """
