@@ -15,8 +15,8 @@ def sigmoid(x):
     """
 
     ### YOUR CODE HERE
-    exp_x = np.exp(x)
-    return exp_x / (exp_x + 1)
+    neg_exp_x = np.exp(-1 * x)
+    return 1 / (1 + neg_exp_x)
     ### END YOUR CODE
 
     return s
