@@ -15,7 +15,8 @@ def sigmoid(x):
     """
 
     ### YOUR CODE HERE
-    raise NotImplementedError
+    exp_x = np.exp(x)
+    return exp_x / (exp_x + 1)
     ### END YOUR CODE
 
     return s
