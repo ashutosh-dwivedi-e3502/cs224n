@@ -4,6 +4,11 @@ import numpy as np
 import random
 
 
+def _f(f, x, rndstate):
+    random.setstate(rndstate)
+    return f(x)
+
+
 # First implement a gradient checker by filling in the following functions
 def gradcheck_naive(f, x):
     """ Gradient check for a function f.
@@ -30,7 +35,12 @@ def gradcheck_naive(f, x):
         # to test cost functions with built in randomness later.
 
         ### YOUR CODE HERE:
-        raise NotImplementedError
+        theta = x[ix]
+        x[ix] = theta + h
+        f_plus = _f(f, x, rndstate)[0]
+        x[ix] = theta - h
+        f_minus = _f(f, x, rndstate)[0]
+        numgrad = (f_plus - f_minus) / (2 * h)
         ### END YOUR CODE
 
         # Compare gradients
