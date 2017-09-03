@@ -36,7 +36,7 @@ def sigmoid_grad(s):
     """
 
     ### YOUR CODE HERE
-    raise NotImplementedError
+    return s * (1 - s)
     ### END YOUR CODE
 
     return ds
