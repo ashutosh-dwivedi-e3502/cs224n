@@ -35,6 +35,9 @@ def gradcheck_naive(f, x):
         # to test cost functions with built in randomness later.
 
         ### YOUR CODE HERE:
+        # change only one of the element of the input, so as to check
+        # what is the gradient with respect to that particular input.
+        # the function howerver gets evaluted over the whole input array
         theta = x[ix]
         x[ix] = theta + h
         f_plus = _f(f, x, rndstate)[0]
